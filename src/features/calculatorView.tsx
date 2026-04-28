@@ -1,24 +1,17 @@
 "use client";
 
-import { useCalculator } from "./calculatorViewModel";
+/*import { useCalculator } from "./calculatorViewModel";
 
 export default function Calculator() {
   const [
     num01,
-    num02,
-    result,
     setNum01,
-    setNum02,
-    setResult,
-    handleAddNum,
-    handleMultNum,
-    handleDivNum,
-    handleSubNum
+    result,
+    handleParOuImpar
   ] = useCalculator();
 
-
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: "20px" }}>
       <h3>Calculadora</h3>
 
       <p>Digite o primeiro número:</p>
@@ -29,25 +22,58 @@ export default function Calculator() {
         onChange={(e) => setNum01(e.target.value)}
       />
 
-      <p>Digite o segundo número:</p>
+      <br />
+      <br />
+
+      <button onClick={handleParOuImpar}>Resultado: {result}</button>
+    </div>
+  );
+}*/
+
+import { Format } from "./calculatorViewModel";
+
+export default function Calculator() {
+  const [
+    id,
+    setId,
+    nome,
+    setNome,
+    email,
+    setEmail,
+    result,
+    setResult,
+    handleFazerLogin,
+  ] = Format();
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h3>Login</h3>
+
       <input
         type="number"
-        placeholder="Número 2"
-        value={num02}
-        onChange={(e) => setNum02(e.target.value)}
+        placeholder="ID:"
+        value={id}
+        onChange={(e) => setId(e.target.value)}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Nome:"
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Email:"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
 
-      <br /><br />
+      <br />
+      <br />
 
-      <button onClick={handleAddNum}>Somar</button>
-      <br/>
-      <button onClick={handleMultNum}>Multi</button>
-      <br/>
-      <button onClick={handleDivNum}>Dividir</button>
-      <br/>
-      <button onClick={handleSubNum}>Subtrair</button>
-
-      <p>Resultado: {result}</p>
+      <button onClick={handleFazerLogin}>Resultado: {result}</button>
     </div>
   );
 }

@@ -1,20 +1,26 @@
-export interface CalculatorData{
+/*export interface CalculatorData{
     num01: number;
-    num02: number;
+}
+export function ParOuImpar(data: CalculatorData):string{
+        if (data.num01 % 2) {
+             return "par";
+        }
+        else {
+            return "impar";
+        }
+}*/
+
+export interface Login {
+    Id: number;
+    Nome: string;
+    Email: string;
 }
 
-export function addNum(data: CalculatorData):number{
-    return data.num01 + data.num02;
-}
+export function FazerLogin(user: Login):string{
 
-export function multNum(data: CalculatorData):number{
-    return data.num01 * data.num02;
-}
-
-export function subNum(data: CalculatorData):number{
-    return data.num01 - data.num02;
-}
-
-export function divNum(data: CalculatorData):number{
-    return data.num01 / data.num02;
+    if (user.Id == 1 && user.Email == "edgar@email.com" && user.Nome == "edgar") {
+        return "Bem-Vindo";
+    } else {
+        return "Acesso Negado";
+    }
 }
